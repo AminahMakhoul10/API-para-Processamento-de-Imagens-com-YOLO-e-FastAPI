@@ -166,3 +166,12 @@ http://127.0.0.1:8080/docs
 ---
 
 Com estas instruções, você estará apto a configurar, executar e utilizar a API para processamento de imagens com YOLO e FastAPI.
+
+## Front-end streamlit
+
+Para acessar o front-end execute:
+
+```bash
+streamlit run app.py
+```
+
