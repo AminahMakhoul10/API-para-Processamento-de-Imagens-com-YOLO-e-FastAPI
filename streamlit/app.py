@@ -4,7 +4,7 @@ from PIL import Image
 import io
 
 # URL da API 
-API_URL = "http://localhost:8080"
+API_URL = "http://127.0.0.1:8080"
 
 # Título da aplicação
 st.title("Detecção de Objetos com YOLO 🚀")
