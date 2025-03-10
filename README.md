@@ -174,4 +174,8 @@ Para acessar o front-end execute:
 ```bash
 streamlit run app.py
 ```
+logo, o link para acesso será este:
 
+```bash
+http://localhost:8501/
+```
