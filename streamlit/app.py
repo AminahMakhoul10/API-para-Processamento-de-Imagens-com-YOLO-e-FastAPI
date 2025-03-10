@@ -3,7 +3,7 @@ import requests
 from PIL import Image
 import io
 
-# URL da API (substitua pelo endereço correto se estiver rodando em outro local)
+# URL da API 
 API_URL = "http://127.0.0.1:8080"
 
 # Título da aplicação
