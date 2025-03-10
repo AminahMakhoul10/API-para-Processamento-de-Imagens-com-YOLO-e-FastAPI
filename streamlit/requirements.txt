@@ -1,0 +1,11 @@
+# Dependências da API FastAPI
+fastapi
+uvicorn
+opencv-python
+pillow
+numpy
+ultralytics
+
+# Dependências do Front-End Streamlit
+streamlit
+requests
