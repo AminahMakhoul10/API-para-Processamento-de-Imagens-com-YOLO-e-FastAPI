@@ -3,9 +3,7 @@ import requests
 from PIL import Image
 import io
 
-# Configuração do backend: permitir que o usuário insira a URL
-backend_URL = st.text_input("URL do Backend:", "http://127.0.0.1:8080")  
-st.write("Exemplo: http://127.0.0.1:8080/processar_imagem/")
+API_URL = "http://127.0.0.1:8080"
 
 # Título da aplicação
 st.title("Detecção de Objetos com YOLO 🚀")
@@ -40,15 +38,11 @@ if uploaded_file:
                 "bg_opacity": bg_opacity,
             }
 
-            # Verificar se a URL do backend foi preenchida corretamente
-            if backend_URL:
-                response = requests.post(f"{backend_URL}/processar_imagem/", files={"image_file": uploaded_file}, params=params)
+            response = requests.post(f"{API_URL}/processar_imagem/", files={"image_file": uploaded_file}, params=params)
 
-                if response.status_code == 200:
-                    # Exibir a imagem processada
-                    processed_image = Image.open(io.BytesIO(response.content))
-                    st.image(processed_image, caption="Imagem Processada", use_container_width=True)
-                else:
-                    st.error("Erro ao processar a imagem. Verifique se a API está rodando.")
+            if response.status_code == 200:
+                # Exibir a imagem processada
+                processed_image = Image.open(io.BytesIO(response.content))
+                st.image(processed_image, caption="Imagem Processada", use_container_width=True)
             else:
-                st.error("Por favor, insira a URL do backend antes de processar a imagem.")
+                st.error("Erro ao processar a imagem. Verifique se a API está rodando.")
